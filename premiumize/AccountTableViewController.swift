@@ -18,10 +18,13 @@ class AccountTableViewController: UITableViewController {
         UIApplication.shared.open(URL(string: "http://www.premiumize.me/premium")!, options: [:])
     }
     
-    let apiManager = APIManager()
+    private let apiManager = APIManager()
+    private let refreshCtrl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshCtrl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.tableView.refreshControl = refreshCtrl
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,12 +39,13 @@ class AccountTableViewController: UITableViewController {
         self.lblPremium.text = data.premiumDateString
         self.lblSpace.text = data.spaceString
         self.txtPIN.text = UserDefaults.standard.string(forKey: "pin") ?? ""
+        refreshCtrl.endRefreshing()
         print("ATVC:updateUI - Account Info updated successfully!")
     }
     
     //Send API Request /account/info
     //Success: call reloadData to update UI
-    func loadData(){
+    @objc func loadData(){
             apiManager.apiAccountInfo() {
                 (data, error) in
                 if let error = error {

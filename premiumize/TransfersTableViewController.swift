@@ -11,17 +11,19 @@ import Foundation
 
 class TransfersTableViewController: UITableViewController {
 
-    var dataFinished: [transfer] = []
-    var dataRunning: [transfer] = []
-    let apiManager = APIManager()
+    private var dataFinished: [transfer] = []
+    private var dataRunning: [transfer] = []
+    private let apiManager = APIManager()
+    private let refreshCtrl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Transfers"
-        let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(loadData))
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateAlert))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "clear", style: .plain, target: self, action: #selector(showClearAlert))
-        self.navigationItem.rightBarButtonItems = [refreshButton, addButton]
+        self.navigationItem.rightBarButtonItems = [addButton]
+        refreshCtrl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.tableView.refreshControl = refreshCtrl
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -87,6 +89,7 @@ class TransfersTableViewController: UITableViewController {
         self.dataFinished = data.getFinishedTransfers
         self.dataRunning = data.getRunningTransfers
         self.tableView.reloadData()
+        refreshCtrl.endRefreshing()
         print("TTVC:updateUI - Transfer List updated successfully")
     }
     

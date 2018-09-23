@@ -13,12 +13,9 @@ import AVFoundation
 
 class FolderListTableViewController: UITableViewController {
 
-    let apiManager = APIManager()
-    
-    @objc func btnRefresh(_ sender: UIBarButtonItem) {
-        loadData(folderID: folderID)
-    }
-    
+    private let apiManager = APIManager()
+    private let refreshCtrl = UIRefreshControl()
+        
     @objc func btnCreateFolder(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Create Folder", message: "Enter Folder name", preferredStyle: .alert)
         alert.addTextField { (textField) in
@@ -52,9 +49,10 @@ class FolderListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Loading"
-        let uiRefreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(btnRefresh(_:)))
         let uiAddButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(btnCreateFolder(_:)))
-        self.navigationItem.rightBarButtonItems = [uiRefreshButton, uiAddButton]
+        self.navigationItem.rightBarButtonItems = [uiAddButton]
+        refreshCtrl.addTarget(self, action: #selector(loadData(_:)), for: .valueChanged)
+        self.tableView.refreshControl = refreshCtrl
     }
 
 
@@ -93,7 +91,12 @@ class FolderListTableViewController: UITableViewController {
         self.navigationItem.title = data.name
         self.data = data.content
         self.tableView.reloadData()
+        refreshCtrl.endRefreshing()
         print("FLTVC:updateUI - Folder /\(data.name)/ updated successfully")
+    }
+    
+    @objc private func loadData(_ sender: Any) {
+        loadData(folderID: folderID)
     }
     
     func loadData(folderID: String){

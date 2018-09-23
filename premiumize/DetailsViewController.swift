@@ -12,7 +12,7 @@ class DetailsViewController: UIViewController {
 
     public var itemID: String = ""
     
-    let apiManager = APIManager()
+    private let apiManager = APIManager()
     
     @IBOutlet weak var uiNavItem: UINavigationItem!
     @IBOutlet weak var lblID: UILabel!
