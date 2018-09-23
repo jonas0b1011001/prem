@@ -193,7 +193,7 @@ class TransfersTableViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    public func createTransfer(src: String){
+    func createTransfer(src: String){
         apiManager.apiTransferCreate(src: src) {
             (data, error) in
             if let error = error {
@@ -207,6 +207,23 @@ class TransfersTableViewController: UITableViewController {
                 }
             } catch{
                 print("TTVC:createTransfer - JSON Decode failed")
+            }
+        }
+    }
+    
+    //ToDo
+    func directdl(src: String){
+        apiManager.apiTransferDirectdl(src: src) {
+            (data, error) in
+            if let error = error {
+                print("TTVC:directdl - APIRequest error\n\(error.localizedDescription)")
+                return
+            }
+            do{
+                let directdl = try JSONDecoder().decode(Directdl.self, from: data!)
+                self.createTransfer(src: directdl.location)
+            } catch{
+                print("TTVC:directdl - JSON Decode failed")
             }
         }
     }

@@ -15,7 +15,7 @@ struct transfer: Codable{
     }
     
     let id: String
-    var name: String
+    let name: String
     let message: String?
     let status: status
     let progress: Float?

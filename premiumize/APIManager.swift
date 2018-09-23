@@ -171,4 +171,14 @@ class APIManager {
         
         sendApiRequest(url: url!, completionHandler: completionHandler)
     }
+    
+    func apiTransferDirectdl(src: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        var urlComponents = URLComponents(string: baseURL + "/transfer/directdl")!
+        let srcQueryItem = URLQueryItem(name: "src", value: src)
+        let queryItems = [pinQueryItem,srcQueryItem]
+        urlComponents.queryItems = queryItems
+        let url = urlComponents.url
+        
+        sendApiRequest(url: url!, completionHandler: completionHandler)
+    }
 }

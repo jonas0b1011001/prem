@@ -24,7 +24,6 @@ struct Item: Codable{
     let type: FileType
     let size: Double?
     let created_at: Double?
-    let stream_link: String?
     let link: String?
     
     public var description: String{
@@ -55,12 +54,9 @@ struct Item: Codable{
     }
     
     public var getLink: URL?{
-        guard let streamLink = self.stream_link else{
-            guard let link = self.link else{
-                return nil
-            }
-            return URL(string: link)
+        guard let link = self.link else{
+            return nil
         }
-        return URL(string: streamLink)
+        return URL(string: link)
     }
 }
