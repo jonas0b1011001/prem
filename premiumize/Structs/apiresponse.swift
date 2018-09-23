@@ -21,4 +21,8 @@ struct ApiResponse: Codable{
         return "status: \(self.status.rawValue)\n"
             + "message: '\(self.message ?? "none")'"
     }
+    
+    public var requestSuccess: Bool {
+        return self.status.rawValue == "success"
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+        } catch {
+            print(error)
+        }
+        // Other project setup
         return true
     }
 
@@ -39,6 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+
+        let vc = self.window?.rootViewController as! UITabBarController
+        vc.selectedIndex = 1
+        let nc = vc.customizableViewControllers![1] as! UINavigationController
+        let ttvc = nc.viewControllers[0] as! TransfersTableViewController
+        ttvc.createTransfer(src: url.absoluteString)
+        
+        return true
     }
 
 

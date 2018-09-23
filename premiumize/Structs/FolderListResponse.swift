@@ -15,7 +15,7 @@ struct FolderListResponse: Codable {
     }
     
     let status: Status
-    let content: [item]
+    let content: [Item]
     let name: String
     let parent_id: String
     
