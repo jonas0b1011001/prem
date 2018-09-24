@@ -19,6 +19,11 @@ class TabBarViewController: UITabBarController {
         super.viewDidAppear(animated)
         if (UserDefaults.standard.string(forKey: "pin") ?? "" == ""){ //Initial Start
             self.performSegue(withIdentifier: "toLoginSegue", sender: nil)
+        } else {
+//            if let clipboardString = UIPasteboard.general.string {
+//                let url = URL(string: clipboardString)
+//                //create transfer, should move to a different spot
+//            }
         }
     }
 

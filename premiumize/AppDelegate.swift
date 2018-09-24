@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc.selectedIndex = 1
         let nc = vc.customizableViewControllers![1] as! UINavigationController
         let ttvc = nc.viewControllers[0] as! TransfersTableViewController
-        ttvc.createTransfer(src: url.absoluteString)
+        ttvc.createTransfer(src: url.absoluteString, completion: nil)
         
         return true
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class APIManager {
     
@@ -16,8 +17,10 @@ class APIManager {
     
     func sendApiRequest(url: URL, completionHandler: @escaping (Data?, Error?) -> Void){
         print("APIM: sending request:\n\(url)")
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         let task = session.dataTask(with: url) {
             (data, response, error) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let error = error {
                 completionHandler(nil, error)
                 return

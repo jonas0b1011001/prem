@@ -18,6 +18,9 @@
 		DD884E452156A9E600199C59 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E442156A9E600199C59 /* TabBarViewController.swift */; };
 		DD884E612157A31300199C59 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E602157A31300199C59 /* AccountTableViewController.swift */; };
 		DD884E632157ABE100199C59 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E622157ABE100199C59 /* APIManager.swift */; };
+		DD93349321583C0B000FD19F /* Directdl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93349221583C0B000FD19F /* Directdl.swift */; };
+		DD9334952158D4CB000FD19F /* ServicesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9334942158D4CB000FD19F /* ServicesListResponse.swift */; };
+		DD93349B21598722000FD19F /* CreateTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93349A21598722000FD19F /* CreateTransferViewController.swift */; };
 		DDCA3C03214E67E200D09154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C02214E67E200D09154 /* AppDelegate.swift */; };
 		DDCA3C08214E67E200D09154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCA3C06214E67E200D09154 /* Main.storyboard */; };
 		DDCA3C0A214E67E400D09154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCA3C09214E67E400D09154 /* Assets.xcassets */; };
@@ -71,6 +74,9 @@
 		DD884E442156A9E600199C59 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		DD884E602157A31300199C59 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		DD884E622157ABE100199C59 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		DD93349221583C0B000FD19F /* Directdl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directdl.swift; sourceTree = "<group>"; };
+		DD9334942158D4CB000FD19F /* ServicesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListResponse.swift; sourceTree = "<group>"; };
+		DD93349A21598722000FD19F /* CreateTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferViewController.swift; sourceTree = "<group>"; };
 		DDCA3BFF214E67E200D09154 /* premiumize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = premiumize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCA3C02214E67E200D09154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCA3C07214E67E200D09154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +128,8 @@
 				DDCA3C30214E854500D09154 /* apiresponse.swift */,
 				DDCA3C34214E86F900D09154 /* item.swift */,
 				DD884E38215642EA00199C59 /* TransferListResponse.swift */,
+				DD93349221583C0B000FD19F /* Directdl.swift */,
+				DD9334942158D4CB000FD19F /* ServicesListResponse.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 		DDCA3C01214E67E200D09154 /* premiumize */ = {
 			isa = PBXGroup;
 			children = (
+				DD93349A21598722000FD19F /* CreateTransferViewController.swift */,
 				DD884E602157A31300199C59 /* AccountTableViewController.swift */,
 				DD884E332155396000199C59 /* FolderListTableViewController.swift */,
 				DD884E442156A9E600199C59 /* TabBarViewController.swift */,
@@ -329,11 +338,14 @@
 				DD884E3621557F4400199C59 /* DetailsViewController.swift in Sources */,
 				DDCA3C35214E86F900D09154 /* item.swift in Sources */,
 				DD884E3D2156468500199C59 /* TransfersTableViewController.swift in Sources */,
+				DD93349321583C0B000FD19F /* Directdl.swift in Sources */,
+				DD9334952158D4CB000FD19F /* ServicesListResponse.swift in Sources */,
 				DDCA3C3D21517CE900D09154 /* AccountInfoResponse.swift in Sources */,
 				DDCA3C03214E67E200D09154 /* AppDelegate.swift in Sources */,
 				DD884E3F2156478200199C59 /* TransferTableViewCell.swift in Sources */,
 				DD4E56D02152CABF00A0D80B /* FolderListResponse.swift in Sources */,
 				DD884E3B2156433500199C59 /* Transfer.swift in Sources */,
+				DD93349B21598722000FD19F /* CreateTransferViewController.swift in Sources */,
 				DD884E632157ABE100199C59 /* APIManager.swift in Sources */,
 				DDCA3C31214E854500D09154 /* apiresponse.swift in Sources */,
 				DD884E342155396000199C59 /* FolderListTableViewController.swift in Sources */,

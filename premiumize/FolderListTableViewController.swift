@@ -37,12 +37,6 @@ class FolderListTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //Deactive AudioSession - Background audio enabled for other apps
-        do {
-            try AVAudioSession.sharedInstance().setActive(false)
-        } catch {
-            print(error)
-        }
         loadData(folderID: folderID)
     }
     

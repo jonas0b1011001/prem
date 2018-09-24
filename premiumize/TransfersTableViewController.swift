@@ -19,7 +19,7 @@ class TransfersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Transfers"
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateAlert))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateAlert(sender:)))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "clear", style: .plain, target: self, action: #selector(showClearAlert))
         self.navigationItem.rightBarButtonItems = [addButton]
         refreshCtrl.addTarget(self, action: #selector(loadData), for: .valueChanged)
@@ -175,40 +175,33 @@ class TransfersTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (UIAlertAction) in
             self.clearFinished()
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (UIAlertAction) in
-            return
-        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
-    @objc func showCreateAlert(){
-        let alert = UIAlertController(title: "Create Download", message: "Enter URL to download", preferredStyle: .alert)
-        alert.addTextField { (txtInput) in
-            txtInput.placeholder = "URL"
-        }
-        alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { [weak alert] (_) in
-            let url = alert!.textFields![0].text!
-            if url != "" {
-                self.createTransfer(src: url)
-            }
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    @objc func showCreateAlert(sender:UIBarButtonItem){
+        let ctvc = self.storyboard?.instantiateViewController(withIdentifier: "CreateTransferViewController") as! CreateTransferViewController
+        ctvc.modalPresentationStyle = .popover
+        present(ctvc, animated: true, completion: nil)
+        ctvc.popoverPresentationController?.barButtonItem = sender
     }
     
-    func createTransfer(src: String){
+    func createTransfer(src: String, completion: ((Bool) -> Void)?) {
         apiManager.apiTransferCreate(src: src) {
             (data, error) in
             if let error = error {
+                completion?(false)
                 print("TTVC:createTransfer - APIRequest error\n\(error.localizedDescription)")
                 return
             }
             do{
                 let apiResponse = try JSONDecoder().decode(ApiResponse.self, from: data!)
                 if apiResponse.requestSuccess {
+                    completion?(true)
                     self.loadData()
                 }
             } catch{
+                completion?(false)
                 print("TTVC:createTransfer - JSON Decode failed")
             }
         }
@@ -224,7 +217,7 @@ class TransfersTableViewController: UITableViewController {
             }
             do{
                 let directdl = try JSONDecoder().decode(Directdl.self, from: data!)
-                self.createTransfer(src: directdl.location)
+                self.createTransfer(src: directdl.location, completion: nil)
             } catch{
                 print("TTVC:directdl - JSON Decode failed")
             }
