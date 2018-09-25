@@ -40,6 +40,16 @@ class APIManager {
         sendApiRequest(url: url!, completionHandler: completionHandler)
     }
     
+    func apiCacheCheck(itemURL: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        var urlComponents = URLComponents(string: baseURL + "/cache/check")!
+        let itemsQueryItem = URLQueryItem(name:"items", value:itemURL)
+        let queryItems = [pinQueryItem, itemsQueryItem]
+        urlComponents.queryItems = queryItems
+        let url = urlComponents.url
+        
+        sendApiRequest(url: url!, completionHandler: completionHandler)
+    }
+    
     func apiFolderList(id: String, completionHandler: @escaping (Data?, Error?) -> Void) {
         var urlComponents = URLComponents(string: baseURL + "/folder/list")!
         let idQueryItem = URLQueryItem(name:"id", value:id)
@@ -184,4 +194,14 @@ class APIManager {
         
         sendApiRequest(url: url!, completionHandler: completionHandler)
     }
+
+    func apiServicesList(completionHandler: @escaping (Data?, Error?) -> Void) {
+        var urlComponents = URLComponents(string: baseURL + "/services/list")!
+        let queryItems = [pinQueryItem]
+        urlComponents.queryItems = queryItems
+        let url = urlComponents.url
+        
+        sendApiRequest(url: url!, completionHandler: completionHandler)
+    }
+
 }

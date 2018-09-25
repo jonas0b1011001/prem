@@ -29,6 +29,7 @@ class FolderListTableViewController: UITableViewController {
                 print("FLTVC:btnCreateFolder - No Foldername provided")
             }
         }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

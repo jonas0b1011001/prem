@@ -21,6 +21,7 @@
 		DD93349321583C0B000FD19F /* Directdl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93349221583C0B000FD19F /* Directdl.swift */; };
 		DD9334952158D4CB000FD19F /* ServicesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9334942158D4CB000FD19F /* ServicesListResponse.swift */; };
 		DD93349B21598722000FD19F /* CreateTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93349A21598722000FD19F /* CreateTransferViewController.swift */; };
+		DD93349D215A197C000FD19F /* ServiceListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93349C215A197C000FD19F /* ServiceListTableViewController.swift */; };
 		DDCA3C03214E67E200D09154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C02214E67E200D09154 /* AppDelegate.swift */; };
 		DDCA3C08214E67E200D09154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCA3C06214E67E200D09154 /* Main.storyboard */; };
 		DDCA3C0A214E67E400D09154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCA3C09214E67E400D09154 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		DD93349221583C0B000FD19F /* Directdl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directdl.swift; sourceTree = "<group>"; };
 		DD9334942158D4CB000FD19F /* ServicesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListResponse.swift; sourceTree = "<group>"; };
 		DD93349A21598722000FD19F /* CreateTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferViewController.swift; sourceTree = "<group>"; };
+		DD93349C215A197C000FD19F /* ServiceListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListTableViewController.swift; sourceTree = "<group>"; };
 		DDCA3BFF214E67E200D09154 /* premiumize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = premiumize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCA3C02214E67E200D09154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCA3C07214E67E200D09154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				DDCA3C02214E67E200D09154 /* AppDelegate.swift */,
 				DD884E37215642AF00199C59 /* Structs */,
 				DDCA3C06214E67E200D09154 /* Main.storyboard */,
+				DD93349C215A197C000FD19F /* ServiceListTableViewController.swift */,
 				DD884E3E2156478200199C59 /* TransferTableViewCell.swift */,
 				DD884E622157ABE100199C59 /* APIManager.swift */,
 				DD884E3C2156468500199C59 /* TransfersTableViewController.swift */,
@@ -336,6 +339,7 @@
 			files = (
 				DD884E2E21551F3500199C59 /* LoadingViewController.swift in Sources */,
 				DD884E3621557F4400199C59 /* DetailsViewController.swift in Sources */,
+				DD93349D215A197C000FD19F /* ServiceListTableViewController.swift in Sources */,
 				DDCA3C35214E86F900D09154 /* item.swift in Sources */,
 				DD884E3D2156468500199C59 /* TransfersTableViewController.swift in Sources */,
 				DD93349321583C0B000FD19F /* Directdl.swift in Sources */,

@@ -8,9 +8,10 @@
 
 import Foundation
 
-struct ServicesListResponse {
+struct ServicesListResponse: Decodable {
+    
     let cache: [String]
     let directdl: [String]
-    let fairusefactor: [(Service: String, Factor: Int)]
+    let fairusefactor: [String: Int]
     
 }

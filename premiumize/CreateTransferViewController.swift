@@ -9,40 +9,57 @@
 import UIKit
 
 class CreateTransferViewController: UIViewController {
+    
+    private let apiManager = APIManager()
+    
     @IBOutlet weak var txtURL: UITextView!
     @IBAction func btnCancel(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    // TODO: Do some preprocessing with the entered url
     @IBAction func btnSaveToCloud(_ sender: UIButton) {
-        let url = txtURL.text ?? ""
+        let urlString = txtURL.text ?? ""
+        
+//        let url = URL(string: urlString)
+//        if let host = url!.host {
+//            //check services/list/
+//            print(host)
+//        } else {
+//            //invalid URL - create task anyways? maybe..
+//        }
+        
         let tbvc = self.presentingViewController as! TabBarViewController
         let nc = tbvc.viewControllers![1] as! UINavigationController
         let ttvc = nc.viewControllers[0] as! TransfersTableViewController
-        ttvc.createTransfer(src: url) {
+        ttvc.createTransfer(src: urlString) {
             (success) in
             if success {
                 self.dismiss(animated: true, completion: nil)
             } else {
-                //try again
+                self.txtURL.backgroundColor = UIColor.red
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("CTVC:viewDidLoad")
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func cacheCheck(itemURL: String){
+        apiManager.apiCacheCheck(itemURL: itemURL) {
+            (data, error) in
+            if let error = error {
+                print("CTVC:cacheCheck - APIRequest error\n\(error.localizedDescription)")
+                return
+            }
+            do{
+                let cache = try JSONDecoder().decode(ApiResponse.self, from: data!)
+                print("CTVC:cacheCheck - success")
+            } catch{
+                print("CTVC:cacheCheck - JSON Decode failed")
+            }
+        }
     }
-    */
-
 }
