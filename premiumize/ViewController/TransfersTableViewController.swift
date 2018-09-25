@@ -19,7 +19,7 @@ class TransfersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Transfers"
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateAlert(sender:)))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateView(sender:)))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "clear", style: .plain, target: self, action: #selector(showClearAlert))
         self.navigationItem.rightBarButtonItems = [addButton]
         refreshCtrl.addTarget(self, action: #selector(loadData), for: .valueChanged)
@@ -179,7 +179,7 @@ class TransfersTableViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    @objc func showCreateAlert(sender:UIBarButtonItem){
+    @objc func showCreateView(sender:UIBarButtonItem){
         let ctvc = self.storyboard?.instantiateViewController(withIdentifier: "CreateTransferViewController") as! CreateTransferViewController
         ctvc.modalPresentationStyle = .popover
         present(ctvc, animated: true, completion: nil)
@@ -199,6 +199,10 @@ class TransfersTableViewController: UITableViewController {
                 if apiResponse.requestSuccess {
                     completion?(true)
                     self.loadData()
+                    print("TTVC:createTransfer - created")
+                } else {
+                    completion?(false)
+                    print("TTVC:createTransfer - creation failed")
                 }
             } catch{
                 completion?(false)

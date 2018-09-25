@@ -14,8 +14,8 @@ class DetailsViewController: UIViewController {
     
     private let apiManager = APIManager()
     
+    @IBOutlet weak var lblID:UILabel!
     @IBOutlet weak var uiNavItem: UINavigationItem!
-    @IBOutlet weak var lblID: UILabel!
     @objc func btnDone(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -31,7 +31,6 @@ class DetailsViewController: UIViewController {
     }
     
     func updateUI(data: Item){
-        lblID.text = data.description
         print("DVC:updateUI - item \(data.name) loaded")
     }
     

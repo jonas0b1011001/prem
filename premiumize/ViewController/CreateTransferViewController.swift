@@ -28,7 +28,10 @@ class CreateTransferViewController: UIViewController {
 //        } else {
 //            //invalid URL - create task anyways? maybe..
 //        }
-        
+        if urlString == "" {
+            setCreationFailed()
+            return
+        }
         let tbvc = self.presentingViewController as! TabBarViewController
         let nc = tbvc.viewControllers![1] as! UINavigationController
         let ttvc = nc.viewControllers[0] as! TransfersTableViewController
@@ -37,7 +40,7 @@ class CreateTransferViewController: UIViewController {
             if success {
                 self.dismiss(animated: true, completion: nil)
             } else {
-                self.txtURL.backgroundColor = UIColor.red
+                self.setCreationFailed()
             }
         }
     }
@@ -45,6 +48,10 @@ class CreateTransferViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    func setCreationFailed(){
+        self.txtURL.backgroundColor = UIColor.red
     }
     
     func cacheCheck(itemURL: String){

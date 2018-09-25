@@ -20,7 +20,6 @@ class ServiceListTableViewController: UITableViewController {
         
         let uiDoneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(btnDone))
         self.navigationItem.rightBarButtonItems = [uiDoneButton]
-        self.navigationItem.title = "Services"
         loadData()
     }
 

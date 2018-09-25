@@ -23,7 +23,6 @@ class APIManager {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let error = error {
                 completionHandler(nil, error)
-                return
             }
             
             completionHandler(data, nil)

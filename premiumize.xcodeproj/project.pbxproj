@@ -22,14 +22,15 @@
 		DD9334952158D4CB000FD19F /* ServicesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9334942158D4CB000FD19F /* ServicesListResponse.swift */; };
 		DD93349B21598722000FD19F /* CreateTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93349A21598722000FD19F /* CreateTransferViewController.swift */; };
 		DD93349D215A197C000FD19F /* ServiceListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93349C215A197C000FD19F /* ServiceListTableViewController.swift */; };
+		DD9334A1215AE841000FD19F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9334A0215AE841000FD19F /* SettingsTableViewController.swift */; };
 		DDCA3C03214E67E200D09154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C02214E67E200D09154 /* AppDelegate.swift */; };
 		DDCA3C08214E67E200D09154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCA3C06214E67E200D09154 /* Main.storyboard */; };
 		DDCA3C0A214E67E400D09154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCA3C09214E67E400D09154 /* Assets.xcassets */; };
 		DDCA3C0D214E67E400D09154 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCA3C0B214E67E400D09154 /* LaunchScreen.storyboard */; };
 		DDCA3C18214E67E400D09154 /* premiumizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C17214E67E400D09154 /* premiumizeTests.swift */; };
 		DDCA3C23214E67E400D09154 /* premiumizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C22214E67E400D09154 /* premiumizeUITests.swift */; };
-		DDCA3C31214E854500D09154 /* apiresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C30214E854500D09154 /* apiresponse.swift */; };
-		DDCA3C35214E86F900D09154 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C34214E86F900D09154 /* item.swift */; };
+		DDCA3C31214E854500D09154 /* Apiresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C30214E854500D09154 /* Apiresponse.swift */; };
+		DDCA3C35214E86F900D09154 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C34214E86F900D09154 /* Item.swift */; };
 		DDCA3C3D21517CE900D09154 /* AccountInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C3C21517CE900D09154 /* AccountInfoResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		DD9334942158D4CB000FD19F /* ServicesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListResponse.swift; sourceTree = "<group>"; };
 		DD93349A21598722000FD19F /* CreateTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferViewController.swift; sourceTree = "<group>"; };
 		DD93349C215A197C000FD19F /* ServiceListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListTableViewController.swift; sourceTree = "<group>"; };
+		DD9334A0215AE841000FD19F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		DDCA3BFF214E67E200D09154 /* premiumize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = premiumize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCA3C02214E67E200D09154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCA3C07214E67E200D09154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,8 +93,8 @@
 		DDCA3C1E214E67E400D09154 /* premiumizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = premiumizeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCA3C22214E67E400D09154 /* premiumizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = premiumizeUITests.swift; sourceTree = "<group>"; };
 		DDCA3C24214E67E400D09154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDCA3C30214E854500D09154 /* apiresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiresponse.swift; sourceTree = "<group>"; };
-		DDCA3C34214E86F900D09154 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
+		DDCA3C30214E854500D09154 /* Apiresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiresponse.swift; sourceTree = "<group>"; };
+		DDCA3C34214E86F900D09154 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		DDCA3C3C21517CE900D09154 /* AccountInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,19 +123,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DD884E37215642AF00199C59 /* Structs */ = {
+		DD884E37215642AF00199C59 /* Struct */ = {
 			isa = PBXGroup;
 			children = (
-				DD884E3A2156433500199C59 /* Transfer.swift */,
-				DD4E56CF2152CABF00A0D80B /* FolderListResponse.swift */,
 				DDCA3C3C21517CE900D09154 /* AccountInfoResponse.swift */,
-				DDCA3C30214E854500D09154 /* apiresponse.swift */,
-				DDCA3C34214E86F900D09154 /* item.swift */,
-				DD884E38215642EA00199C59 /* TransferListResponse.swift */,
+				DDCA3C30214E854500D09154 /* Apiresponse.swift */,
 				DD93349221583C0B000FD19F /* Directdl.swift */,
+				DD4E56CF2152CABF00A0D80B /* FolderListResponse.swift */,
+				DDCA3C34214E86F900D09154 /* Item.swift */,
 				DD9334942158D4CB000FD19F /* ServicesListResponse.swift */,
+				DD884E3A2156433500199C59 /* Transfer.swift */,
+				DD884E38215642EA00199C59 /* TransferListResponse.swift */,
 			);
-			path = Structs;
+			path = Struct;
+			sourceTree = "<group>";
+		};
+		DD9334A2215AECA4000FD19F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DD884E602157A31300199C59 /* AccountTableViewController.swift */,
+				DD93349A21598722000FD19F /* CreateTransferViewController.swift */,
+				DD884E3521557F4400199C59 /* DetailsViewController.swift */,
+				DD884E332155396000199C59 /* FolderListTableViewController.swift */,
+				DD884E2D21551F3400199C59 /* LoadingViewController.swift */,
+				DD93349C215A197C000FD19F /* ServiceListTableViewController.swift */,
+				DD9334A0215AE841000FD19F /* SettingsTableViewController.swift */,
+				DD884E442156A9E600199C59 /* TabBarViewController.swift */,
+				DD884E3C2156468500199C59 /* TransfersTableViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		DDCA3BF6214E67E200D09154 = {
@@ -159,22 +177,15 @@
 		DDCA3C01214E67E200D09154 /* premiumize */ = {
 			isa = PBXGroup;
 			children = (
-				DD93349A21598722000FD19F /* CreateTransferViewController.swift */,
-				DD884E602157A31300199C59 /* AccountTableViewController.swift */,
-				DD884E332155396000199C59 /* FolderListTableViewController.swift */,
-				DD884E442156A9E600199C59 /* TabBarViewController.swift */,
-				DDCA3C02214E67E200D09154 /* AppDelegate.swift */,
-				DD884E37215642AF00199C59 /* Structs */,
-				DDCA3C06214E67E200D09154 /* Main.storyboard */,
-				DD93349C215A197C000FD19F /* ServiceListTableViewController.swift */,
-				DD884E3E2156478200199C59 /* TransferTableViewCell.swift */,
+				DD9334A2215AECA4000FD19F /* ViewController */,
+				DD884E37215642AF00199C59 /* Struct */,
 				DD884E622157ABE100199C59 /* APIManager.swift */,
-				DD884E3C2156468500199C59 /* TransfersTableViewController.swift */,
-				DD884E3521557F4400199C59 /* DetailsViewController.swift */,
-				DD884E2D21551F3400199C59 /* LoadingViewController.swift */,
-				DDCA3C09214E67E400D09154 /* Assets.xcassets */,
+				DDCA3C02214E67E200D09154 /* AppDelegate.swift */,
+				DDCA3C06214E67E200D09154 /* Main.storyboard */,
+				DD884E3E2156478200199C59 /* TransferTableViewCell.swift */,
 				DDCA3C0B214E67E400D09154 /* LaunchScreen.storyboard */,
 				DDCA3C0E214E67E400D09154 /* Info.plist */,
+				DDCA3C09214E67E400D09154 /* Assets.xcassets */,
 			);
 			path = premiumize;
 			sourceTree = "<group>";
@@ -340,7 +351,7 @@
 				DD884E2E21551F3500199C59 /* LoadingViewController.swift in Sources */,
 				DD884E3621557F4400199C59 /* DetailsViewController.swift in Sources */,
 				DD93349D215A197C000FD19F /* ServiceListTableViewController.swift in Sources */,
-				DDCA3C35214E86F900D09154 /* item.swift in Sources */,
+				DDCA3C35214E86F900D09154 /* Item.swift in Sources */,
 				DD884E3D2156468500199C59 /* TransfersTableViewController.swift in Sources */,
 				DD93349321583C0B000FD19F /* Directdl.swift in Sources */,
 				DD9334952158D4CB000FD19F /* ServicesListResponse.swift in Sources */,
@@ -351,8 +362,9 @@
 				DD884E3B2156433500199C59 /* Transfer.swift in Sources */,
 				DD93349B21598722000FD19F /* CreateTransferViewController.swift in Sources */,
 				DD884E632157ABE100199C59 /* APIManager.swift in Sources */,
-				DDCA3C31214E854500D09154 /* apiresponse.swift in Sources */,
+				DDCA3C31214E854500D09154 /* Apiresponse.swift in Sources */,
 				DD884E342155396000199C59 /* FolderListTableViewController.swift in Sources */,
+				DD9334A1215AE841000FD19F /* SettingsTableViewController.swift in Sources */,
 				DD884E452156A9E600199C59 /* TabBarViewController.swift in Sources */,
 				DD884E612157A31300199C59 /* AccountTableViewController.swift in Sources */,
 				DD884E39215642EA00199C59 /* TransferListResponse.swift in Sources */,
