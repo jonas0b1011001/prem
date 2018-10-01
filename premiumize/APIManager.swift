@@ -11,7 +11,6 @@ import UIKit
 
 class APIManager {
     
-    fileprivate let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults.standard.string(forKey: "pin") ?? "")
     fileprivate let baseURL = "https://www.premiumize.me/api"
     fileprivate let session = URLSession(configuration: URLSessionConfiguration.ephemeral, delegate: nil, delegateQueue: OperationQueue.main)
     
@@ -24,13 +23,13 @@ class APIManager {
             if let error = error {
                 completionHandler(nil, error)
             }
-            
             completionHandler(data, nil)
         }
         task.resume()
     }
     
     func apiAccountInfo(completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/account/info")!
         let queryItems = [pinQueryItem]
         urlComponents.queryItems = queryItems
@@ -40,6 +39,7 @@ class APIManager {
     }
     
     func apiCacheCheck(itemURL: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/cache/check")!
         let itemsQueryItem = URLQueryItem(name:"items", value:itemURL)
         let queryItems = [pinQueryItem, itemsQueryItem]
@@ -50,9 +50,11 @@ class APIManager {
     }
     
     func apiFolderList(id: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/folder/list")!
         let idQueryItem = URLQueryItem(name:"id", value:id)
-        let queryItems = [pinQueryItem, idQueryItem]
+        let breadcrumbsQueryItem = URLQueryItem(name:"includebreadcrumbs", value:"true")
+        let queryItems = [pinQueryItem, idQueryItem, breadcrumbsQueryItem]
         urlComponents.queryItems = queryItems
         let url = urlComponents.url
         
@@ -60,6 +62,7 @@ class APIManager {
     }
     
     func apiFolderCreate(name: String,parentID: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/folder/create")!
         let parentIDQueryItem = URLQueryItem(name:"parent_id", value:parentID)
         let nameQueryItem = URLQueryItem(name:"name", value:name)
@@ -71,6 +74,7 @@ class APIManager {
     }
     
     func apiFolderRename(name: String,ID: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/folder/rename")!
         let idQueryItem = URLQueryItem(name:"id", value:ID)
         let nameQueryItem = URLQueryItem(name:"name", value:name)
@@ -83,6 +87,7 @@ class APIManager {
     
     // No idea how this is supposed to work
     func apiFolderPaste(files: String, folders: String, targetID: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/folder/paste")!
         let targetIDQueryItem = URLQueryItem(name:"target_id", value:targetID)
         let filesQueryItem = URLQueryItem(name:"files", value:files)
@@ -95,6 +100,7 @@ class APIManager {
     }
     
     func apiFolderDelete(ID: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/folder/delete")!
         let parentIDQueryItem = URLQueryItem(name:"id", value:ID)
         let queryItems = [pinQueryItem, parentIDQueryItem]
@@ -106,6 +112,7 @@ class APIManager {
     
     // No idea how this is supposed to work
     func apiFolderUploadinfo(ID: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/folder/uploadinfo")!
         let idQueryItem = URLQueryItem(name:"id", value:ID)
         let queryItems = [pinQueryItem, idQueryItem]
@@ -116,6 +123,7 @@ class APIManager {
     }
     
     func apiItemRename(name: String,ID: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/item/rename")!
         let idQueryItem = URLQueryItem(name:"id", value:ID)
         let nameQueryItem = URLQueryItem(name:"name", value:name)
@@ -127,6 +135,7 @@ class APIManager {
     }
     
     func apiItemDetails(ID: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/item/details")!
         let idQueryItem = URLQueryItem(name:"id", value:ID)
         let queryItems = [pinQueryItem, idQueryItem]
@@ -137,6 +146,7 @@ class APIManager {
     }
     
     func apiItemDelete(ID: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/item/delete")!
         let idQueryItem = URLQueryItem(name:"id", value:ID)
         let queryItems = [pinQueryItem, idQueryItem]
@@ -147,6 +157,7 @@ class APIManager {
     }
     
     func apiTransferList(completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/transfer/list")!
         let queryItems = [pinQueryItem]
         urlComponents.queryItems = queryItems
@@ -156,6 +167,7 @@ class APIManager {
     }
     
     func apiTransferDelete(ID: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/transfer/delete")!
         let idQueryItem = URLQueryItem(name:"id", value:ID)
         let queryItems = [pinQueryItem, idQueryItem]
@@ -166,6 +178,7 @@ class APIManager {
     }
 
     func apiTransferClearfinished(completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/transfer/clearfinished")!
         let queryItems = [pinQueryItem]
         urlComponents.queryItems = queryItems
@@ -175,6 +188,7 @@ class APIManager {
     }
     
     func apiTransferCreate(src: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/transfer/create")!
         let srcQueryItem = URLQueryItem(name: "src", value: src)
         let queryItems = [pinQueryItem, srcQueryItem]
@@ -185,6 +199,7 @@ class APIManager {
     }
     
     func apiTransferDirectdl(src: String, completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/transfer/directdl")!
         let srcQueryItem = URLQueryItem(name: "src", value: src)
         let queryItems = [pinQueryItem,srcQueryItem]
@@ -195,6 +210,7 @@ class APIManager {
     }
 
     func apiServicesList(completionHandler: @escaping (Data?, Error?) -> Void) {
+        let pinQueryItem = URLQueryItem(name:"pin", value:UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "")
         var urlComponents = URLComponents(string: baseURL + "/services/list")!
         let queryItems = [pinQueryItem]
         urlComponents.queryItems = queryItems

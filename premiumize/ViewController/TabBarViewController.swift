@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if (UserDefaults.standard.string(forKey: "pin") ?? "" == ""){ //Initial Start
+        if (UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? "" == ""){ //Initial Start
             self.performSegue(withIdentifier: "toLoginSegue", sender: nil)
         } else {
 //            if let clipboardString = UIPasteboard.general.string {

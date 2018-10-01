@@ -18,15 +18,18 @@ struct FolderListResponse: Codable {
     let content: [Item]
     let name: String
     let parent_id: String
+    let breadcrumbs: [breadcrumb]
     
-    public var description: String{
-        var content = ""
-        for item in self.content {
-            content += "\(item.name)\n"
+    public var fullPath: String{
+        var path: String = "/"
+        for x in breadcrumbs{
+            path = path + "\(x.name)/"
         }
-        return "status: \(self.status)\n"
-            + "content: \(content)"
-            + "name: \(self.name)\n"
-            + "parent_id \(self.parent_id)"
+        return "\(path)"
     }
+}
+
+struct breadcrumb: Codable{
+    let id: String
+    let name: String
 }

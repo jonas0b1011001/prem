@@ -25,17 +25,7 @@ struct Item: Codable{
     let size: Double?
     let created_at: Double?
     let link: String?
-    
-    public var description: String{
-        return "id: \(self.id)\n"
-            + "transcode: \(String(describing: self.transcode_status))\n"
-            + "name: \(self.name)\n"
-            + "Type: \(self.type.rawValue)\n"
-            + "Size: \(self.size ?? 0)\n"
-            + "Created: \(self.created_at ?? 0)\n"
-            + "Link: \(self.link ?? "")\n"
-    }
-    
+        
     public var sizeString: String{
         guard var size = self.size else{
             return ""
@@ -46,7 +36,17 @@ struct Item: Codable{
             size /= 1024
             index += 1
         }
-        return String(format: "%.3f ", size) + units[index]
+        return "\(round( size * 1000 ) / 1000) \(units[index])"
+    }
+    
+    public var dateString: String {
+        guard let createdAt = self.created_at else{
+            return ""
+        }
+        let date = Date(timeIntervalSince1970: createdAt)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd. MMMM yy, HH:MM" //Specify your format that you want
+        return dateFormatter.string(from: date)
     }
     
     public var isFolder: Bool{
@@ -58,5 +58,31 @@ struct Item: Codable{
             return nil
         }
         return URL(string: link)
+    }
+    
+    public var getLinkString: String{
+        guard let link = self.link else{
+            return ""
+        }
+        return link
+    }
+    
+    public var getTranscodeString: String{
+        guard let transcode = self.transcode_status else{
+            return ""
+        }
+        return transcode.rawValue
+    }
+    
+    public var getDetails: [String]{
+        var details:[String] = []
+        details.append(self.name)
+        details.append(self.type.rawValue)
+        details.append(self.sizeString)
+        details.append(self.dateString)
+        details.append(self.getLinkString)
+        details.append(self.getTranscodeString)
+        details.append(self.id)
+        return details
     }
 }

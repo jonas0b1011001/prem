@@ -75,6 +75,20 @@ class ServiceListTableViewController: UITableViewController {
                 self.updateUI()
             } catch{
                 print("SLTVC:loadData - JSON Decode failed")
+                self.getError(data: data!)
             }
         }
-    }}
+    }
+    
+    func getError(data: Data){
+        do{
+            let apiError = try JSONDecoder().decode(ApiError.self, from: data)
+            let alert = UIAlertController(title: "Error", message: apiError.message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } catch{
+            print("SLTVC:getError - JSON Decode failed")
+        }
+    }
+    
+}

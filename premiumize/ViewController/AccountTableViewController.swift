@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountTableViewController: UITableViewController {
+class AccountTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var lblID: UILabel!
     @IBOutlet weak var lblPremium: UILabel!
     @IBOutlet weak var lblLimit: UILabel!
@@ -23,8 +23,10 @@ class AccountTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.txtPIN.text = UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.string(forKey: "pin") ?? ""
         refreshCtrl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         self.tableView.refreshControl = refreshCtrl
+        self.txtPIN.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,9 +40,17 @@ class AccountTableViewController: UITableViewController {
         self.lblLimit.text = data.limitString
         self.lblPremium.text = data.premiumDateString
         self.lblSpace.text = data.spaceString
-        self.txtPIN.text = UserDefaults.standard.string(forKey: "pin") ?? ""
         refreshCtrl.endRefreshing()
         print("ATVC:updateUI - Account Info updated successfully!")
+    }
+    
+    func loginFailed(){
+        self.lblID.text = " "
+        self.lblLimit.text = " "
+        self.lblPremium.text = " "
+        self.lblSpace.text = " "
+        refreshCtrl.endRefreshing()
+        print("ATVC:loginFailed - Account Info cleared!")
     }
     
     //Send API Request /account/info
@@ -57,7 +67,36 @@ class AccountTableViewController: UITableViewController {
                     self.updateUI(data: accountInfo)
                 } catch{
                     print("ATVC:loadData - JSON Decode failed")
+                    self.getError(data: data!)
+                    self.loginFailed()
                 }
         }
+    }
+    
+    func getError(data: Data){
+        do{
+            let apiError = try JSONDecoder().decode(ApiError.self, from: data)
+            let alert = UIAlertController(title: "Error", message: apiError.message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } catch{
+            print("ATVC:getError - JSON Decode failed")
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true);
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UserDefaults(suiteName: "group.gj.premiumize.iPremiumize")!.set(txtPIN.text, forKey: "pin")
+        print("ATVC:textFieldDidEndEditing - Pin saved")
+        loadData()
     }
 }

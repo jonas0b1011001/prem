@@ -15,7 +15,10 @@ class LoadingViewController: UIViewController {
     
     @IBOutlet weak var btnRetry: UIButton!
     @IBAction func login(_ sender: Any) {
-        UserDefaults.standard.set(txtPin.text, forKey: "pin")
+        if let userDefaults = UserDefaults(suiteName: "group.gj.premiumize.iPremiumize") {
+            userDefaults.set(txtPin.text, forKey: "pin")
+            print("LVC:login - PIN stored")
+        }
         checkPin()
     }
     @IBOutlet weak var txtPin: UITextField!
@@ -50,6 +53,7 @@ class LoadingViewController: UIViewController {
             } catch{
                 self.setRetry()
                 print("LVC:loadData - JSON Decode failed")
+                self.getError(data: data!)
             }
         }
     }
@@ -69,4 +73,15 @@ class LoadingViewController: UIViewController {
         self.lblStatus.text = "Logging In..."
     }
 
+    func getError(data: Data){
+        do{
+            let apiError = try JSONDecoder().decode(ApiError.self, from: data)
+            let alert = UIAlertController(title: "Error", message: apiError.message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } catch{
+            print("LVC:getError - JSON Decode failed")
+        }
+    }
+    
 }

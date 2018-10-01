@@ -18,7 +18,6 @@ class TransfersTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Transfers"
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateView(sender:)))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "clear", style: .plain, target: self, action: #selector(showClearAlert))
         self.navigationItem.rightBarButtonItems = [addButton]
@@ -105,6 +104,7 @@ class TransfersTableViewController: UITableViewController {
                 self.updateUI(data: transferList)
             } catch{
                 print("TTVC:loadData - JSON Decode failed")
+                self.getError(data: data!)
             }
         }
     }
@@ -123,6 +123,7 @@ class TransfersTableViewController: UITableViewController {
                 }
             } catch{
                 print("TTVC:deleteTransfer - JSON Decode failed")
+                self.getError(data: data!)
             }
         }
     }
@@ -141,6 +142,7 @@ class TransfersTableViewController: UITableViewController {
                 }
             } catch{
                 print("TTVC:clearFinished - JSON Decode failed")
+                self.getError(data: data!)
             }
         }
     }
@@ -207,6 +209,7 @@ class TransfersTableViewController: UITableViewController {
             } catch{
                 completion?(false)
                 print("TTVC:createTransfer - JSON Decode failed")
+                self.getError(data: data!)
             }
         }
     }
@@ -224,7 +227,38 @@ class TransfersTableViewController: UITableViewController {
                 self.createTransfer(src: directdl.location, completion: nil)
             } catch{
                 print("TTVC:directdl - JSON Decode failed")
+                self.getError(data: data!)
             }
         }
     }
+    
+    func getError(data: Data){
+        do{
+            let apiError = try JSONDecoder().decode(ApiError.self, from: data)
+            let alert = UIAlertController(title: "Error", message: apiError.message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } catch{
+            print("TTVC:getError - JSON Decode failed")
+        }
+    }
+}
+
+class TransferTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var lblState: UILabel!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblProgress: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        //super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
 }

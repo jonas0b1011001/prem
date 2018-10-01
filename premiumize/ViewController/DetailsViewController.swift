@@ -8,21 +8,25 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsTableViewController: UITableViewController {
 
     public var itemID: String = ""
     
     private let apiManager = APIManager()
     
-    @IBOutlet weak var lblID:UILabel!
-    @IBOutlet weak var uiNavItem: UINavigationItem!
-    @objc func btnDone(_ sender: UIBarButtonItem) {
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblType: UILabel!
+    @IBOutlet weak var lblSize: UILabel!
+    @IBOutlet weak var lblCreatedAt: UILabel!
+    @IBOutlet weak var lblLink: UILabel!
+    @IBOutlet weak var lblTranscodeStatus: UILabel!
+    @IBOutlet weak var lblID: UILabel!
+    @IBAction func btnDone(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        uiNavItem.title = "Details"
-        uiNavItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(btnDone(_:)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,8 +34,15 @@ class DetailsViewController: UIViewController {
         loadData()
     }
     
-    func updateUI(data: Item){
-        print("DVC:updateUI - item \(data.name) loaded")
+    func updateUI(data: [String]){
+        lblName.text = data[0]
+        lblType.text = data[1]
+        lblSize.text = data[2]
+        lblCreatedAt.text = data[3]
+        lblLink.text = data[4]
+        lblTranscodeStatus.text = data[5]
+        lblID.text = data[6]
+        print("DVC:updateUI - item \(data[0]) loaded")
     }
     
     func loadData(){
@@ -43,10 +54,22 @@ class DetailsViewController: UIViewController {
             }
             do{
                 let itemDetails = try JSONDecoder().decode(Item.self, from: data!)
-                self.updateUI(data: itemDetails)
+                self.updateUI(data: itemDetails.getDetails)
             } catch {
                 print("DVC:loadData - JSON Decode failed")
+                self.getError(data: data!)
             }
+        }
+    }
+    
+    func getError(data: Data){
+        do{
+            let apiError = try JSONDecoder().decode(ApiError.self, from: data)
+            let alert = UIAlertController(title: "Error", message: apiError.message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } catch{
+            print("DVC:getError - JSON Decode failed")
         }
     }
 }

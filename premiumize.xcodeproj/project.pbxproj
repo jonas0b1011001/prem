@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD3A37A121617E02007945AC /* CacheCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A37A021617E02007945AC /* CacheCheckResponse.swift */; };
+		DD3A37A321618B51007945AC /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A37A221618B51007945AC /* ApiError.swift */; };
 		DD4E56D02152CABF00A0D80B /* FolderListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4E56CF2152CABF00A0D80B /* FolderListResponse.swift */; };
 		DD884E2E21551F3500199C59 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E2D21551F3400199C59 /* LoadingViewController.swift */; };
 		DD884E342155396000199C59 /* FolderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E332155396000199C59 /* FolderListTableViewController.swift */; };
@@ -14,7 +16,6 @@
 		DD884E39215642EA00199C59 /* TransferListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E38215642EA00199C59 /* TransferListResponse.swift */; };
 		DD884E3B2156433500199C59 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E3A2156433500199C59 /* Transfer.swift */; };
 		DD884E3D2156468500199C59 /* TransfersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E3C2156468500199C59 /* TransfersTableViewController.swift */; };
-		DD884E3F2156478200199C59 /* TransferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E3E2156478200199C59 /* TransferTableViewCell.swift */; };
 		DD884E452156A9E600199C59 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E442156A9E600199C59 /* TabBarViewController.swift */; };
 		DD884E612157A31300199C59 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E602157A31300199C59 /* AccountTableViewController.swift */; };
 		DD884E632157ABE100199C59 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD884E622157ABE100199C59 /* APIManager.swift */; };
@@ -23,6 +24,13 @@
 		DD93349B21598722000FD19F /* CreateTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93349A21598722000FD19F /* CreateTransferViewController.swift */; };
 		DD93349D215A197C000FD19F /* ServiceListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93349C215A197C000FD19F /* ServiceListTableViewController.swift */; };
 		DD9334A1215AE841000FD19F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9334A0215AE841000FD19F /* SettingsTableViewController.swift */; };
+		DD9334AA215C30F6000FD19F /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9334A9215C30F6000FD19F /* ActionViewController.swift */; };
+		DD9334AD215C30F6000FD19F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9334AB215C30F6000FD19F /* MainInterface.storyboard */; };
+		DD9334B1215C30F6000FD19F /* iPremiumizeAction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD9334A7215C30F6000FD19F /* iPremiumizeAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD9334B6215C339E000FD19F /* iPremiumizeExtensionJS.js in Resources */ = {isa = PBXBuildFile; fileRef = DD9334B5215C339E000FD19F /* iPremiumizeExtensionJS.js */; };
+		DD9334BC215CB714000FD19F /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9334BB215CB714000FD19F /* ApiResponse.swift */; };
+		DD9334C0215D88D0000FD19F /* DirectDL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9334BF215D88D0000FD19F /* DirectDL.swift */; };
+		DD9334C2215F8461000FD19F /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9334C1215F8461000FD19F /* DownloadManager.swift */; };
 		DDCA3C03214E67E200D09154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA3C02214E67E200D09154 /* AppDelegate.swift */; };
 		DDCA3C08214E67E200D09154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCA3C06214E67E200D09154 /* Main.storyboard */; };
 		DDCA3C0A214E67E400D09154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCA3C09214E67E400D09154 /* Assets.xcassets */; };
@@ -35,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DD9334AF215C30F6000FD19F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDCA3BF7214E67E200D09154 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD9334A6215C30F6000FD19F;
+			remoteInfo = iPremiumizeAction;
+		};
 		DDCA3C14214E67E400D09154 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DDCA3BF7214E67E200D09154 /* Project object */;
@@ -58,6 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				DD9334B1215C30F6000FD19F /* iPremiumizeAction.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD3A37A021617E02007945AC /* CacheCheckResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCheckResponse.swift; sourceTree = "<group>"; };
+		DD3A37A221618B51007945AC /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		DD4E56CF2152CABF00A0D80B /* FolderListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListResponse.swift; sourceTree = "<group>"; };
 		DD884E2D21551F3400199C59 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		DD884E332155396000199C59 /* FolderListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListTableViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +90,6 @@
 		DD884E38215642EA00199C59 /* TransferListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferListResponse.swift; sourceTree = "<group>"; };
 		DD884E3A2156433500199C59 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
 		DD884E3C2156468500199C59 /* TransfersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersTableViewController.swift; sourceTree = "<group>"; };
-		DD884E3E2156478200199C59 /* TransferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferTableViewCell.swift; sourceTree = "<group>"; };
 		DD884E442156A9E600199C59 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		DD884E602157A31300199C59 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		DD884E622157ABE100199C59 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -81,6 +98,16 @@
 		DD93349A21598722000FD19F /* CreateTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransferViewController.swift; sourceTree = "<group>"; };
 		DD93349C215A197C000FD19F /* ServiceListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListTableViewController.swift; sourceTree = "<group>"; };
 		DD9334A0215AE841000FD19F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		DD9334A7215C30F6000FD19F /* iPremiumizeAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iPremiumizeAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD9334A9215C30F6000FD19F /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		DD9334AC215C30F6000FD19F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DD9334AE215C30F6000FD19F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD9334B5215C339E000FD19F /* iPremiumizeExtensionJS.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = iPremiumizeExtensionJS.js; sourceTree = "<group>"; };
+		DD9334BB215CB714000FD19F /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		DD9334BD215CB9E4000FD19F /* iPremiumizeAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iPremiumizeAction.entitlements; sourceTree = "<group>"; };
+		DD9334BE215CBA42000FD19F /* premiumize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = premiumize.entitlements; sourceTree = "<group>"; };
+		DD9334BF215D88D0000FD19F /* DirectDL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectDL.swift; sourceTree = "<group>"; };
+		DD9334C1215F8461000FD19F /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		DDCA3BFF214E67E200D09154 /* premiumize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = premiumize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCA3C02214E67E200D09154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCA3C07214E67E200D09154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +126,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DD9334A4215C30F6000FD19F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDCA3BFC214E67E200D09154 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,7 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				DDCA3C3C21517CE900D09154 /* AccountInfoResponse.swift */,
+				DD3A37A221618B51007945AC /* ApiError.swift */,
 				DDCA3C30214E854500D09154 /* Apiresponse.swift */,
+				DD3A37A021617E02007945AC /* CacheCheckResponse.swift */,
 				DD93349221583C0B000FD19F /* Directdl.swift */,
 				DD4E56CF2152CABF00A0D80B /* FolderListResponse.swift */,
 				DDCA3C34214E86F900D09154 /* Item.swift */,
@@ -154,12 +190,27 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		DD9334A8215C30F6000FD19F /* iPremiumizeAction */ = {
+			isa = PBXGroup;
+			children = (
+				DD9334BD215CB9E4000FD19F /* iPremiumizeAction.entitlements */,
+				DD9334A9215C30F6000FD19F /* ActionViewController.swift */,
+				DD9334AB215C30F6000FD19F /* MainInterface.storyboard */,
+				DD9334AE215C30F6000FD19F /* Info.plist */,
+				DD9334B5215C339E000FD19F /* iPremiumizeExtensionJS.js */,
+				DD9334BB215CB714000FD19F /* ApiResponse.swift */,
+				DD9334BF215D88D0000FD19F /* DirectDL.swift */,
+			);
+			path = iPremiumizeAction;
+			sourceTree = "<group>";
+		};
 		DDCA3BF6214E67E200D09154 = {
 			isa = PBXGroup;
 			children = (
 				DDCA3C01214E67E200D09154 /* premiumize */,
 				DDCA3C16214E67E400D09154 /* premiumizeTests */,
 				DDCA3C21214E67E400D09154 /* premiumizeUITests */,
+				DD9334A8215C30F6000FD19F /* iPremiumizeAction */,
 				DDCA3C00214E67E200D09154 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,6 +221,7 @@
 				DDCA3BFF214E67E200D09154 /* premiumize.app */,
 				DDCA3C13214E67E400D09154 /* premiumizeTests.xctest */,
 				DDCA3C1E214E67E400D09154 /* premiumizeUITests.xctest */,
+				DD9334A7215C30F6000FD19F /* iPremiumizeAction.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,12 +229,13 @@
 		DDCA3C01214E67E200D09154 /* premiumize */ = {
 			isa = PBXGroup;
 			children = (
+				DD9334BE215CBA42000FD19F /* premiumize.entitlements */,
 				DD9334A2215AECA4000FD19F /* ViewController */,
 				DD884E37215642AF00199C59 /* Struct */,
 				DD884E622157ABE100199C59 /* APIManager.swift */,
+				DD9334C1215F8461000FD19F /* DownloadManager.swift */,
 				DDCA3C02214E67E200D09154 /* AppDelegate.swift */,
 				DDCA3C06214E67E200D09154 /* Main.storyboard */,
-				DD884E3E2156478200199C59 /* TransferTableViewCell.swift */,
 				DDCA3C0B214E67E400D09154 /* LaunchScreen.storyboard */,
 				DDCA3C0E214E67E400D09154 /* Info.plist */,
 				DDCA3C09214E67E400D09154 /* Assets.xcassets */,
@@ -211,6 +264,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DD9334A6215C30F6000FD19F /* iPremiumizeAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD9334B2215C30F6000FD19F /* Build configuration list for PBXNativeTarget "iPremiumizeAction" */;
+			buildPhases = (
+				DD9334A3215C30F6000FD19F /* Sources */,
+				DD9334A4215C30F6000FD19F /* Frameworks */,
+				DD9334A5215C30F6000FD19F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPremiumizeAction;
+			productName = iPremiumizeAction;
+			productReference = DD9334A7215C30F6000FD19F /* iPremiumizeAction.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DDCA3BFE214E67E200D09154 /* premiumize */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDCA3C27214E67E400D09154 /* Build configuration list for PBXNativeTarget "premiumize" */;
@@ -223,6 +293,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DD9334B0215C30F6000FD19F /* PBXTargetDependency */,
 			);
 			name = premiumize;
 			productName = premiumize;
@@ -275,10 +346,21 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Jonas Geissler";
 				TargetAttributes = {
+					DD9334A6215C30F6000FD19F = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					DDCA3BFE214E67E200D09154 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -312,11 +394,21 @@
 				DDCA3BFE214E67E200D09154 /* premiumize */,
 				DDCA3C12214E67E400D09154 /* premiumizeTests */,
 				DDCA3C1D214E67E400D09154 /* premiumizeUITests */,
+				DD9334A6215C30F6000FD19F /* iPremiumizeAction */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DD9334A5215C30F6000FD19F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD9334B6215C339E000FD19F /* iPremiumizeExtensionJS.js in Resources */,
+				DD9334AD215C30F6000FD19F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDCA3BFD214E67E200D09154 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,11 +436,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DD9334A3215C30F6000FD19F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD9334AA215C30F6000FD19F /* ActionViewController.swift in Sources */,
+				DD9334C0215D88D0000FD19F /* DirectDL.swift in Sources */,
+				DD9334BC215CB714000FD19F /* ApiResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDCA3BFB214E67E200D09154 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DD884E2E21551F3500199C59 /* LoadingViewController.swift in Sources */,
+				DD3A37A121617E02007945AC /* CacheCheckResponse.swift in Sources */,
 				DD884E3621557F4400199C59 /* DetailsViewController.swift in Sources */,
 				DD93349D215A197C000FD19F /* ServiceListTableViewController.swift in Sources */,
 				DDCA3C35214E86F900D09154 /* Item.swift in Sources */,
@@ -357,9 +460,10 @@
 				DD9334952158D4CB000FD19F /* ServicesListResponse.swift in Sources */,
 				DDCA3C3D21517CE900D09154 /* AccountInfoResponse.swift in Sources */,
 				DDCA3C03214E67E200D09154 /* AppDelegate.swift in Sources */,
-				DD884E3F2156478200199C59 /* TransferTableViewCell.swift in Sources */,
 				DD4E56D02152CABF00A0D80B /* FolderListResponse.swift in Sources */,
+				DD3A37A321618B51007945AC /* ApiError.swift in Sources */,
 				DD884E3B2156433500199C59 /* Transfer.swift in Sources */,
+				DD9334C2215F8461000FD19F /* DownloadManager.swift in Sources */,
 				DD93349B21598722000FD19F /* CreateTransferViewController.swift in Sources */,
 				DD884E632157ABE100199C59 /* APIManager.swift in Sources */,
 				DDCA3C31214E854500D09154 /* Apiresponse.swift in Sources */,
@@ -390,6 +494,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DD9334B0215C30F6000FD19F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD9334A6215C30F6000FD19F /* iPremiumizeAction */;
+			targetProxy = DD9334AF215C30F6000FD19F /* PBXContainerItemProxy */;
+		};
 		DDCA3C15214E67E400D09154 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DDCA3BFE214E67E200D09154 /* premiumize */;
@@ -403,6 +512,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DD9334AB215C30F6000FD19F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD9334AC215C30F6000FD19F /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		DDCA3C06214E67E200D09154 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -422,6 +539,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DD9334B3215C30F6000FD19F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = iPremiumizeAction/iPremiumizeAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UXBL878QHH;
+				INFOPLIST_FILE = iPremiumizeAction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = gj.premiumize.iPremiumizeAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD9334B4215C30F6000FD19F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = iPremiumizeAction/iPremiumizeAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UXBL878QHH;
+				INFOPLIST_FILE = iPremiumizeAction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = gj.premiumize.iPremiumizeAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DDCA3C25214E67E400D09154 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -539,7 +701,9 @@
 		DDCA3C28214E67E400D09154 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = premiumize/premiumize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UXBL878QHH;
 				INFOPLIST_FILE = premiumize/Info.plist;
@@ -557,7 +721,9 @@
 		DDCA3C29214E67E400D09154 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = premiumize/premiumize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UXBL878QHH;
 				INFOPLIST_FILE = premiumize/Info.plist;
@@ -657,6 +823,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DD9334B2215C30F6000FD19F /* Build configuration list for PBXNativeTarget "iPremiumizeAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD9334B3215C30F6000FD19F /* Debug */,
+				DD9334B4215C30F6000FD19F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DDCA3BFA214E67E200D09154 /* Build configuration list for PBXProject "premiumize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
